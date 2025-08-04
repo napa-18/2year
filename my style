@@ -1,0 +1,23 @@
+body{
+background-color: cadetblue;
+}
+h1{
+color: #31291d;
+background-color: aquamarine;
+text-align: center;
+padding: 80px;
+}
+#para1{ /* create id css*/
+color: darkcyan;
+text: indent 40px;
+}
+.para2{ /* crete is css*/
+color: rgb(33, 98, 184);
+text-indent: 40px
+border 2px ;
+}
+img{
+display: block;
+margin: auto;
+width: 50%;
+}
