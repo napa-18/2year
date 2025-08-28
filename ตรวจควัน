@@ -1,0 +1,60 @@
+int analogPin = A0;
+int ledPin = D13;
+int val=0;
+void setup() {
+ pinMode(ledPin,OUTPUT);
+ Serial.begin(9600);
+}
+void loop(){
+  val=analogRead(analogPin);
+  Serial.print("val = ");
+  Serial.println(val);
+  delay(100);
+  if (val>0)
+  {
+  digitalWrite(ledPin,HIGH);
+  delay(1000);
+  digitalWrite(ledPin,HIGH);
+  delay(1000);
+}else{
+  digitalWrite(ledPin,LOW);
+  }
+}  
+
+
+
+
+
+
+
+
+int analogPin = A0;
+int ledPin = D13;
+int ledPin1 = D12;
+int val=0;
+void setup() {
+ pinMode(ledPin,OUTPUT);
+ pinMode(ledPin1,OUTPUT);
+ Serial.begin(9600);
+}
+void loop(){
+  val=analogRead(analogPin);
+  Serial.print("val = ");
+  Serial.println(val);
+  delay(100);
+  digitalWrite(ledPin,LOW);
+  digitalWrite(ledPin1,LOW);
+ 
+  if (val>150)
+  {
+  digitalWrite(ledPin,HIGH);
+  delay(1000);
+  digitalWrite(ledPin,HIGH);
+  delay(1000);
+}else{
+  digitalWrite(ledPin1,HIGH);
+  delay(1000);
+  digitalWrite(ledPin1,HIGH);
+  delay(1000);
+  }
+}  
