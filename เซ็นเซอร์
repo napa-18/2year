@@ -1,0 +1,31 @@
+#define trigPin D10
+#define echoPin D11
+#define LED_PIN D13
+void setup() {
+Serial.begin (9600);
+pinMode(trigPin, OUTPUT);
+pinMode(echoPin, INPUT);
+pinMode(LED_PIN,OUTPUT);
+}
+void loop() {
+int distance = Ultrasonic();
+Serial.println("sese "+String(distance)+ " cm");
+if(distance<10){    
+digitalWrite(LED_PIN,HIGH);
+}
+else{
+digitalWrite(LED_PIN,LOW);
+}
+delay(1000);
+}
+int Ultrasonic() {
+long duration, Distance;
+digitalWrite(trigPin, LOW);
+delayMicroseconds(2);
+digitalWrite(trigPin, HIGH);
+delayMicroseconds(10);
+digitalWrite(trigPin, LOW);
+duration = pulseIn(echoPin, HIGH);
+Distance = duration / 58.2;
+return Distance;
+}
