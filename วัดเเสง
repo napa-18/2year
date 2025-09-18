@@ -1,0 +1,29 @@
+int ledPin2= D2;
+ int ledPin3 = D3;
+ int analogPin = A0;
+ int LDR =0;
+ void setup() {
+  pinMode(ledPin2,OUTPUT);
+  pinMode(ledPin3,OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+ LDR = analogRead(analogPin);
+ Serial.print("LDR=");
+ Serial.println(LDR);
+ if(LDR<500){
+  digitalWrite(ledPin2,LOW);
+  digitalWrite(ledPin3,HIGH);
+  delay(300);
+  digitalWrite(ledPin3,LOW);
+  delay(300);
+ }else{
+  digitalWrite(ledPin2,HIGH);
+  delay(300);
+  digitalWrite(ledPin2,LOW);
+  delay(300);
+  digitalWrite(ledPin3,LOW);
+ }
+delay(500);
+}
