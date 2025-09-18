@@ -1,0 +1,23 @@
+ const int SensorIR= D2;
+ const int ledStatus = D13;
+ int SensorIR_State = 0;
+ int count_c = 0;
+ void setup() {
+  Serial.begin(9600);
+  pinMode(ledStatus,OUTPUT);
+  pinMode(SensorIR,INPUT);
+  
+}
+
+void loop() {
+SensorIR_State = digitalRead(SensorIR);
+if(SensorIR_State==HIGH){
+  digitalWrite(ledStatus,LOW);
+  count_c =0;
+ }else{
+  digitalWrite(ledStatus,HIGH);
+  count_c ++ ;
+  Serial.print("Sensor Active : ");
+  Serial.println(count_c);
+ }
+}
