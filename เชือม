@@ -1,0 +1,30 @@
+int ledPin = D12;
+int inputPin=D3;
+int value =0;
+int count =0;
+
+
+void setup() {
+  pinMode(ledPin,OUTPUT);
+  pinMode(inputPin,INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int value=digitalRead(inputPin);
+   Serial.print("value= ");
+  Serial.println(value);
+  if(value == HIGH){
+    count++;
+    Serial.print("count= ");
+  Serial.println(count);
+    digitalWrite(ledPin,HIGH);
+    delay(1000);
+    digitalWrite(ledPin,LOW);
+    delay(1000);
+    }
+    else{
+    digitalWrite(ledPin,LOW);
+    delay(1000);
+    }
+}
